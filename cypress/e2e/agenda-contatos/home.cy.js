@@ -12,7 +12,7 @@ describe('Testes da agenda de contatos', () => {
         cy.get('input[type="email"]').type('teste@gmail.com')
         cy.get('input[type="tel"]').type('01 123456789')
         cy.get('.adicionar').first().click()
-        cy.get('.sc-beqWaB eQdhbg contato > li').should('have.length', 4)
+        cy.get('.contato').should('have.length', 4)
     })
 
     it('Deve editar as informações de um contato', () => {
@@ -21,11 +21,11 @@ describe('Testes da agenda de contatos', () => {
         cy.get('input[type="email"]').type('teste01@gmail.com')
         cy.get('input[type="tel"]').type('01 12345678')
         cy.get('.alterar').click()
-        cy.get('.sc-beqWaB eQdhbg contato > li').should('have.length', 4)
+        cy.get('.contato').should('have.length', 4)
     })
 
     it('Deve deletar um contato', () => {
         cy.get('.delete').last().click()
-        cy.get('.sc-beqWaB eQdhbg contato > li').should('have.length', 3)
+        cy.get('.contato').should('have.length', 3)
     })
 })
